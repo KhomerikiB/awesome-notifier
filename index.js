@@ -2,13 +2,18 @@ function Popup(data = {}) {
   Object.keys(data).map((key) => (this[key] = data[key]));
 }
 
-Popup.prototype.renderPopup = function ({ type, text }) {
-  if (type && type !== "error " && type !== "success" && type !== "warning")
+Popup.prototype.renderPopup = function (data = {}) {
+  if (
+    data.type &&
+    data.type !== "error " &&
+    data.type !== "success" &&
+    data.type !== "warning"
+  ) {
     throw new Error("Enter Valid type options: warning,success,error");
-  else this.type = type;
-  if (text && typeof text !== "string")
+  } else this.type = data.type ? data.type : this.type;
+  if (data.text && typeof data.text !== "string")
     throw new Error("Text must be a string");
-  else this.text = text;
+  else this.text = data.text ? data.text : this.text;
   this.createdElement = document.querySelector(".popup-wrapper");
   if (!this.createdElement) {
     this.createdElement = document.createElement("div");
@@ -21,7 +26,7 @@ Popup.prototype.renderPopup = function ({ type, text }) {
 };
 
 Popup.prototype.appendError = function () {
-  let element = document.createElement("div");
+  const element = document.createElement("div");
   element.textContent = this.text;
   if (this.type === "success")
     element.setAttribute("style", this.successStyle());
@@ -48,4 +53,6 @@ const notify = new Popup({
   text: "It was Successfull",
 });
 
-module.exports.notify = notify;
+module.exports = {
+  notify,
+};

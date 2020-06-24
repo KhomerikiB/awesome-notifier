@@ -12,9 +12,27 @@ Create different type of notifications/popups
 
 import { nofiy } from 'awesome-notifier'
 
-notify.popup({
-  type: "success",
-  text: "It was Successfull",
+notify.renderPopup()
+
+```
+
+# Examples
+
+```
+
+import { nofiy } from 'awesome-notifier'
+
+notify.renderPopup({
+    type:'success',
+    text:'Success Message'
+})
+notify.renderPopup({
+    type:'error',
+    text:'Error Message'
+})
+notify.renderPopup({
+    type:'success',
+    text:'Warning Message'
 })
 
 ```
