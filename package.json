@@ -1,6 +1,6 @@
 {
   "name": "awesome-notifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create different type of notifications/popups",
   "main": "index.js",
   "repository": {
