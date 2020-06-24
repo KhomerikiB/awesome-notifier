@@ -1,0 +1,12 @@
+{
+  "name": "awesome-notifier",
+  "version": "1.0.0",
+  "description": "Create different type of notifications/popups",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Beka Khomeriki",
+  "license": "ISC"
+}
